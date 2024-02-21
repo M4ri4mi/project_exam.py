@@ -1,0 +1,16 @@
+{
+    
+        "questions": [
+          {"prompt": "5 * 10 = ", "answer": 50},
+          {"prompt": "45 + 23 = ", "answer": 68},
+          {"prompt": "8 * 7 = ", "answer": 56},
+          {"prompt": "12 - 4 = ", "answer": 8},
+          {"prompt": "100 / 5 = ", "answer": 20},
+          {"prompt": "15 + 35 = ", "answer": 50},
+          {"prompt": "9 * 6 = ", "answer": 54},
+          {"prompt": "25 - 13 =", "answer": 12},
+          {"prompt": "64 / 8 = ", "answer": 8},
+          {"prompt": "30 + 40 = ", "answer": 70}
+        ]
+      }
+      

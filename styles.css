@@ -1,0 +1,162 @@
+/* Main window background */
+MainWindow {
+    background-color:  #FFFFF0;
+}
+
+/* Button styles */
+QPushButton {
+    background-color: #007BFF; 
+    color: black; 
+    border: none; 
+    padding: 8px 16px; 
+    margin: 4px; 
+    border-radius: 8px; 
+}
+
+/* Button hover effect */
+QPushButton:hover {
+    background-color: #0056b3; 
+}
+
+/* Button pressed effect */
+QPushButton:pressed {
+    background-color: #0056b3; 
+}
+
+/* Start an exam button styles */
+QPushButton#start-exam-button {
+    background-color: #007BFF; 
+    color: black; 
+    border: none; 
+    padding: 20px 40px; 
+    margin: 4px; 
+    border-radius: 8px; 
+    font-size: 24px; 
+}
+
+/* Use Calculator button styles */
+QPushButton#use-calculator-button {
+    font-size: 20px;
+    margin-top: 70px;
+}
+
+/* Answer the Question button styles */
+QPushButton#answer-question-button {
+    font-size:20px;
+   
+}
+
+/* Question label styles */
+QLabel#question-label {
+    color: black;       
+    font-size: 30px;     
+    font-weight: bold;   
+    text-align: center;  
+    margin-left: auto;   
+    margin-right: auto;  
+}
+
+
+
+/* Answer line edit styles */
+QLineEdit {
+    background-color: #FFFFFF; 
+    border: 2px solid #007BFF; 
+    border-radius: 8px;
+    padding: 8px; 
+    color: #000000; 
+    
+    
+}
+
+QLineEdit#answer_line {
+    width: 200px; 
+    max-width: 300px; 
+    color:black;
+}
+
+
+
+/* Submit button styles */
+QPushButton#submit_button {
+    background-color: #007BFF; 
+    color: black;
+    border: none; 
+    padding: 8px 16px; 
+    margin-top: 8px; 
+    border-radius: 8px; 
+    font-size: 20px;
+    font-weight:bold;
+    margin-top: 40px;
+}
+
+
+/* Submit button hover effect */
+QPushButton#submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Submit button pressed effect */
+QPushButton#submit-button:pressed {
+    background-color: #0056b3; 
+}
+
+QPushButton#next_button {
+    font-size:20px;
+    margin-top:50px;
+    font-weight:bold;
+}
+
+QPushButton#return_button {
+    border-radius: 8px; 
+    font-size: 20px;
+    font-weight:bold;
+    margin-top: 5px;
+}
+
+
+
+/* Styling for the result message */
+QLabel#result-label {
+    color:black;
+    font-size: 20px; 
+    margin-left: auto;   
+    margin-right: auto;
+}
+
+/* Styling for the result_label */
+QLabel#result-label {
+    color:black; 
+    font-size: 20px; 
+}
+
+
+QLabel#score-label {
+    color: black;
+    font-size: 20px; 
+    margin-left: auto;  
+    margin-right: auto;
+ 
+}
+
+/* Finish button styles */
+QPushButton#finish-button {
+    font-size: 30px;
+    font-weight:bold;
+    margin-top:40px;
+}
+
+/* Finish button hover effect */
+QPushButton#finish-button:hover {
+    background-color: #0056b3; 
+}
+
+/* Finish button pressed effect */
+QPushButton#finish-button:pressed {
+    background-color: #0056b3; 
+}
+
+
+
+
+
