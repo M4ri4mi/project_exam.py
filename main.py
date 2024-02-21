@@ -68,8 +68,8 @@ class MainWindow(QWidget):
         self.layout.addWidget(answer_question_button)
 
     def use_calculator(self):
-        self.calculator = Calculator()
-        self.calculator.show()
+      self.calculator = Calculator(self)
+      self.calculator.exec_()
 
     def answer_question(self):
         # Clear the layout before adding new widgets

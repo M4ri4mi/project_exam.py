@@ -1,76 +1,20 @@
-# from PyQt5.QtCore import Qt
-# from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLineEdit, QPushButton, QHBoxLayout
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLineEdit, QPushButton, QHBoxLayout
 
-# class Calculator(QWidget):
-#     def __init__(self):
-#         super().__init__()
-#         self.setWindowTitle('Calculator')
-#         self.setGeometry(100, 100, 300, 400)
-
-#         self.expression_line = QLineEdit()
-#         self.expression_line.setReadOnly(True)
-#         self.expression_line.setAlignment(Qt.AlignRight)
-
-#         # Buttons for the calculator
-#         self.buttons = [
-#             ['7', '8', '9', '/'],
-#             ['4', '5', '6', '*'],
-#             ['1', '2', '3', '-'],
-#             ['0', '.', '←', '+'],
-#             ['=', 'C']  # '=' for result, 'C' for clear
-#         ]
-
-#         self.create_layout()
-
-#     def create_layout(self):
-#         layout = QVBoxLayout()
-#         layout.addWidget(self.expression_line)
-
-#         for row in self.buttons:
-#             row_layout = QHBoxLayout()
-#             for button_text in row:
-#                 button = QPushButton(button_text)
-#                 button.clicked.connect(lambda _, text=button_text: self.on_button_click(text))
-#                 row_layout.addWidget(button)
-#             layout.addLayout(row_layout)
-
-#         self.setLayout(layout)
-
-#     def on_button_click(self, text):
-#         if text == '=':
-#             try:
-#                 result = eval(self.expression_line.text())
-#                 self.expression_line.setText(str(result))
-#             except Exception as e:
-#                 self.expression_line.setText("Error")
-#         elif text == 'C':  # Clear button
-#             self.expression_line.clear()
-#         elif text == '←':  # Delete button
-#             current_text = self.expression_line.text()
-#             self.expression_line.setText(current_text[:-1])
-#         else:
-#             self.expression_line.setText(self.expression_line.text() + text)
-
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLineEdit, QPushButton, QHBoxLayout
-
-class Calculator(QWidget):
-    def __init__(self):
-        super().__init__()
+class Calculator(QDialog):  # Inherit from QDialog instead of QWidget
+    def __init__(self, parent=None):  
+        super().__init__(parent)
         self.setWindowTitle('Calculator')
-        self.setGeometry(100, 100, 300, 400)
+        self.setFixedSize(300, 400)  # Set fixed size
 
         self.expression_line = QLineEdit()
         self.expression_line.setReadOnly(True)
-        self.expression_line.setAlignment(Qt.AlignRight)
 
-        # Buttons for the calculator
         self.buttons = [
             ['7', '8', '9', '/'],
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
             ['0', '.', '←', '+'],
-            ['=', 'C']  # '=' for result, 'C' for clear
+            ['=', 'C']
         ]
 
         self.create_layout()
@@ -96,9 +40,9 @@ class Calculator(QWidget):
                 self.expression_line.setText(str(result))
             except Exception as e:
                 self.expression_line.setText("Error")
-        elif text == 'C':  # Clear button
+        elif text == 'C':
             self.expression_line.clear()
-        elif text == '←':  # Delete button
+        elif text == '←':
             current_text = self.expression_line.text()
             self.expression_line.setText(current_text[:-1])
         else:
