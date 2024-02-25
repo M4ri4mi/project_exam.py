@@ -3,6 +3,7 @@ import json
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit, QMessageBox
 from PyQt5.QtCore import Qt
 
+# Importing the Calculator class from calculator_gui module
 from calculator_gui import Calculator
 
 # Create the QApplication instance
@@ -24,8 +25,9 @@ class MainWindow(QWidget):
 
     def init_ui(self):
         self.layout = QVBoxLayout()
-        self.layout.setAlignment(Qt.AlignCenter)  # Align the layout to the center
+        self.layout.setAlignment(Qt.AlignCenter) 
 
+        # Create "Start an Exam" button
         self.start_exam_button = QPushButton('Start an Exam')
         self.start_exam_button.setObjectName('start-exam-button')  # Set the object name (ID)
         self.start_exam_button.clicked.connect(self.start_exam)
@@ -42,11 +44,13 @@ class MainWindow(QWidget):
         self.display_question(self.questions[self.current_question_index])  # Display the first question
 
     def load_questions(self, file_path):
+        # Function to load questions from JSON file
         with open(file_path, 'r') as file:
             data = json.load(file)
             return data.get('questions', [])
 
     def display_question(self, question_data):
+        # Function to display a question
         # Clear the layout before adding new widgets
         self.clear_layout()
 
@@ -68,10 +72,12 @@ class MainWindow(QWidget):
         self.layout.addWidget(answer_question_button)
 
     def use_calculator(self):
-      self.calculator = Calculator(self)
-      self.calculator.exec_()
+        # Function to handle "Use Calculator" button click
+        self.calculator = Calculator(self)
+        self.calculator.exec_()
 
     def answer_question(self):
+        # Function to handle "Answer the Question" button click
         # Clear the layout before adding new widgets
         self.clear_layout()
 
@@ -98,12 +104,14 @@ class MainWindow(QWidget):
         self.layout.addWidget(return_button)
 
     def check_input(self, text):
+        # Function to check the input in the answer line edit
         # Check if the entered text contains only numbers
         if not text.isdigit():
             # Remove the last character if it's not a number
             self.answer_line.setText(text[:-1])
 
     def submit_answer(self):
+        # Function to handle submitting the answer
         user_answer = self.answer_line.text().strip()
 
         if user_answer == "":
@@ -146,12 +154,14 @@ class MainWindow(QWidget):
             self.layout.addWidget(finish_button)
 
     def next_question(self):
+        # Function to move to the next question
         self.current_question_index += 1
         self.display_question(self.questions[self.current_question_index])
 
     def finish_exam(self):
+        # Function to finish the exam and display results
         # Display results on the same page
-        if self.score > 5:
+        if self.score >= 3:
             result_message = 'Congratulations! You passed the exam.'
         else:
             result_message = 'You failed the exam.'
@@ -174,10 +184,12 @@ class MainWindow(QWidget):
         self.sender().deleteLater()
 
     def return_to_question(self):
+        # Function to return back to the question
         # Display the question again
         self.display_question(self.questions[self.current_question_index])
 
     def clear_layout(self):
+        # Function to clear the layout
         for i in reversed(range(self.layout.count())):
             widget = self.layout.itemAt(i).widget()
             if widget is not None:
@@ -187,6 +199,7 @@ if __name__ == "__main__":
     main_window = MainWindow()
     main_window.show()
     sys.exit(app.exec_())
+
 
 
 
